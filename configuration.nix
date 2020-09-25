@@ -121,6 +121,7 @@ services.xserver.displayManager = {
 services.xserver.windowManager = {
   awesome.enable = true;
   xmonad.enable = true;
+  xmonad.enableContribAndExtras = true;
 };
 
 ############################ Programs and Packages ########################################
@@ -153,6 +154,8 @@ environment.systemPackages = with pkgs; [
   xfce.xfce4-power-manager
   i3lock-color
   cbatticon
+  i3status
+  haskellPackages.xmobar
 ];
 
 }
