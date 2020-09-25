@@ -105,6 +105,7 @@ environment.pathsToLink = [ "/libexec" ];
 
 services.autorandr.enable = true;
 services.picom.enable = true;
+services.tlp.enable = true;
 
 services.xserver.xautolock.enable = true;
 services.xserver.xautolock.locker = "${pkgs.i3lock-color}/bin/i3lock-color -i /home/plien/.config/awesome/themes/background.jpg";
@@ -151,6 +152,7 @@ environment.systemPackages = with pkgs; [
   arandr
   xfce.xfce4-power-manager
   i3lock-color
+  cbatticon
 ];
 
 }
