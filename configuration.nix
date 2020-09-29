@@ -86,9 +86,9 @@
 ################################## Networking #############################################
 
 networking.networkmanager.enable = true;
-networking.networkmanager.packages = with pkgs; [
-  networkmanager_dmenu
-];
+# networking.networkmanager.packages = with pkgs; [
+#   networkmanager_dmenu
+# ];
 
 ################################### Security ##############################################
 
@@ -103,25 +103,27 @@ programs.zsh.promptInit = "source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel
 
 environment.pathsToLink = [ "/libexec" ];
 
-services.autorandr.enable = true;
-services.picom.enable = true;
 services.tlp.enable = true;
 
+services.autorandr.enable = true;
+
 services.xserver.xautolock.enable = true;
-services.xserver.xautolock.locker = "${pkgs.i3lock-color}/bin/i3lock-color -i /home/plien/.config/awesome/themes/background.jpg";
-services.xserver.xautolock.nowlocker = "${pkgs.i3lock-color}/bin/i3lock-color -i /home/plien/.config/awesome/themes/background.jpg";
+services.xserver.xautolock.locker = "${pkgs.i3lock-color}/bin/i3lock-color -i /home/plien/Pictures/background.jpg";
 
 
 services.xserver.displayManager = {
   lightdm.enable = true;
   lightdm.greeters.gtk.enable = true;
   defaultSession = "none+awesome";
+  autoLogin.enable = true;
+  autoLogin.user = "plien";
 };
 
 services.xserver.windowManager = {
   awesome.enable = true;
   xmonad.enable = true;
   xmonad.enableContribAndExtras = true;
+  herbstluftwm.enable = true;
 };
 
 ############################ Programs and Packages ########################################
@@ -156,6 +158,22 @@ environment.systemPackages = with pkgs; [
   cbatticon
   i3status
   haskellPackages.xmobar
+  tdesktop
+  signal-desktop
+  electron
+  franz
+  rambox
+  binutils-unwrapped
+  gtk3
+  dmenu
+  j4-dmenu-desktop
+  gitg
+  xbindkeys
+  brightnessctl
+  appimage-run
+  todoist-electron
+  bitwarden
+  st
 ];
 
 }
