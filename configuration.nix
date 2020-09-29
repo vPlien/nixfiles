@@ -13,6 +13,12 @@
       ./hardware-configuration.nix
     ];
 
+  nix.nixPath = [
+                  "nixpkgs=/nix/var/nix/profiles/per-user/root/channels/nixos/nixpkgs"
+		  "nixos-config=/home/plien/nixfiles/configuration.nix"
+		  "/nix/var/nix/profile/per-user/root/channels"
+		];
+
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
